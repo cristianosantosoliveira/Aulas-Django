@@ -4,15 +4,15 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
-    html = f"<h1>Bem vindo `a { timezone.now()}</h1>"
+    html = f"<h1>Bem vindo à </h1>"
     response = HttpResponse(html, status=404)
-    response['ultimo_acesso'] = timezone.now()
+    response['ultimo_acesso'] = timezone.localtime(timezone.now())
     return response
 
 
 def setacookie(request):
     response = HttpResponse()
-    response.set_cookie("my_name", value="Cristiano")
+    response.set_cookie("my_name", value="Guilherme")
 
     return response
 
@@ -54,8 +54,7 @@ def show_post_values(request):
     <label for="sobrenome">Last name:</label><br>
     <input type="text" id="sobrenome" name="sobrenome" value=""><br><br>
     <input type="submit" value="Enviar">
-    </form>
+    </form> 
     """
     html_to_response = head+html
     return HttpResponse(html_to_response)
-

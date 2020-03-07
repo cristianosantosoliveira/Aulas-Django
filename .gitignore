@@ -9,7 +9,7 @@ __pycache__/
 *$py.class
 .env
 db.sqlite3
-
+.vscode
 # C extensions
 *.so
 
