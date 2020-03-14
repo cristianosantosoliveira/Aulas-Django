@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.urls import reverse, reverse_lazy
 
 
-@permission_required('view_carrinho', login_url=reverse_lazy("login"))
+@permission_required('aula5.add_carrinho', login_url=reverse_lazy("login"))
 def permission_view(request):
     return HttpResponse("view restrita para quem tem x permissão")
 
